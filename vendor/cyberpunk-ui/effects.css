@@ -1,0 +1,133 @@
+/*! @laddtnov/cyberpunk-ui — effects.css | MIT */
+
+/* Everything below is in the `cyberpunk-ui` cascade layer. Any rule you write
+   outside a layer beats it regardless of specificity, so overriding the kit
+   never needs !important and never needs a longer selector than the one you
+   would write anyway. The body is not re-indented: a layer wrapper is not a
+   nesting level worth 1,600 lines of churn. */
+@layer cyberpunk-ui {
+
+/* ── 1. Box glow ──────────────────────────────────────────────── */
+.cy-glow         { box-shadow: 0 0 12px color-mix(in srgb, var(--cy-neon-cyan) 50%, transparent), 0 0 30px color-mix(in srgb, var(--cy-neon-cyan) 25%, transparent); }
+.cy-glow--pink   { box-shadow: 0 0 12px color-mix(in srgb, var(--cy-neon-pink) 50%, transparent), 0 0 30px color-mix(in srgb, var(--cy-neon-pink) 25%, transparent); }
+.cy-glow--purple { box-shadow: 0 0 12px color-mix(in srgb, var(--cy-neon-purple) 50%, transparent), 0 0 30px color-mix(in srgb, var(--cy-neon-purple) 25%, transparent); }
+.cy-glow--gold   { box-shadow: 0 0 12px color-mix(in srgb, var(--cy-neon-gold) 50%, transparent), 0 0 30px color-mix(in srgb, var(--cy-neon-gold) 25%, transparent); }
+
+/* ── 2. Text glow ─────────────────────────────────────────────── */
+.cy-text-glow       { text-shadow: 0 0 10px var(--cy-neon-cyan), 0 0 24px color-mix(in srgb, var(--cy-neon-cyan) 50%, transparent); }
+.cy-text-glow--pink { text-shadow: 0 0 10px var(--cy-neon-pink), 0 0 24px color-mix(in srgb, var(--cy-neon-pink) 50%, transparent); }
+
+/* Gold reads differently from the neon pair and the numbers say why: it is a
+   warm hue at a lower saturation, so the same 10px halo that makes cyan look
+   lit makes gold look smeared. The near shadow is tightened and the far one
+   dimmed — the effect is a machined edge catching light rather than a tube
+   glowing, which is the register this colour belongs to. */
+.cy-text-glow--gold { text-shadow: 0 0 6px color-mix(in srgb, var(--cy-neon-gold) 90%, transparent), 0 0 18px color-mix(in srgb, var(--cy-neon-gold) 35%, transparent); }
+
+/* ── 3. Glitch text (RGB split) ───────────────────────────────── */
+.cy-glitch {
+  color: var(--cy-neon-cyan);
+  text-shadow: 0 0 24px var(--cy-neon-cyan), 0 0 60px color-mix(in srgb, var(--cy-neon-cyan) 40%, transparent);
+  animation: cy-glitch 2.5s infinite;
+}
+
+@keyframes cy-glitch {
+  0%, 90%, 100% { text-shadow: 0 0 24px var(--cy-neon-cyan), 0 0 60px color-mix(in srgb, var(--cy-neon-cyan) 40%, transparent); }
+  92% { text-shadow: -3px 0 var(--cy-neon-pink), 3px 0 var(--cy-neon-purple); }
+  94% { text-shadow: 0 0 24px var(--cy-neon-cyan), 0 0 60px color-mix(in srgb, var(--cy-neon-cyan) 40%, transparent); }
+  96% { text-shadow:  3px 0 var(--cy-neon-pink), -3px 0 var(--cy-neon-purple); }
+}
+
+/* ── 4. Scanlines overlay ─────────────────────────────────────────
+   Apply to any element; a CRT scanline veil is painted on top via
+   ::after without intercepting clicks. */
+.cy-scanlines { position: relative; }
+.cy-scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0)    0,
+    rgba(0, 0, 0, 0)    2px,
+    rgba(0, 0, 0, 0.18) 3px,
+    rgba(0, 0, 0, 0)    4px
+  );
+}
+
+/* ── 5. Animated grid backdrop ────────────────────────────────────
+   Animates via background-position so it can sit on any element
+   without hijacking its transform. */
+.cy-grid-bg {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--cy-neon-cyan) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--cy-neon-cyan) 10%, transparent) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: cy-grid-move 20s linear infinite;
+}
+
+@keyframes cy-grid-move {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 50px; }
+}
+
+/* ── 6. Blinking terminal cursor ──────────────────────────────────
+   Renders a blinking "_" after the element. */
+.cy-cursor {
+  display: inline-block;
+  color: var(--cy-neon-cyan);
+  animation: cy-cursor-blink 1s step-end infinite;
+}
+.cy-cursor::after { content: "_"; }
+
+@keyframes cy-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* ── WCAG: honour reduced-motion ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .cy-glitch,
+  .cy-grid-bg,
+  .cy-cursor { animation: none; }
+}
+
+/* ── Forced colours ───────────────────────────────────────────────
+   Windows High Contrast Mode and friends replace the palette with the
+   user's own. This file is where the kit gives up the most, and it should:
+   every effect here is decoration, and decoration is exactly what a user
+   asking for forced colours is asking to be rid of.
+
+   The removals are explicit rather than left to the UA. `text-shadow` is
+   not forced by the feature, so a cyan glow can survive underneath forced
+   text and muddy it; `background-image` is not forced either, so the grid
+   and the scanline veil would keep painting over content whose colours
+   have changed underneath them. The scanline overlay is the worst of these
+   — it is a translucent black wash sitting on top of the text, which is a
+   direct contrast reduction applied to someone who has asked for more. */
+@media (forced-colors: active) {
+  .cy-glow,
+  .cy-glow--pink,
+  .cy-glow--purple,
+  .cy-glow--gold { box-shadow: none; }
+
+  .cy-text-glow,
+  .cy-text-glow--pink,
+  .cy-text-glow--gold,
+  .cy-glitch { text-shadow: none; }
+
+  /* The RGB split is drawn entirely in text-shadow, so with the shadow
+     gone the animation has nothing left to move. */
+  .cy-glitch { animation: none; }
+
+  .cy-scanlines::after { background: none; }
+
+  .cy-grid-bg {
+    background-image: none;
+    animation: none;
+  }
+}
+
+}

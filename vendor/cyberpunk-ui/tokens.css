@@ -1,0 +1,199 @@
+/*! @laddtnov/cyberpunk-ui — tokens.css | MIT */
+
+/* Everything below is in the `cyberpunk-ui` cascade layer. Any rule you write
+   outside a layer beats it regardless of specificity, so overriding the kit
+   never needs !important and never needs a longer selector than the one you
+   would write anyway. The body is not re-indented: a layer wrapper is not a
+   nesting level worth 1,600 lines of churn. */
+@layer cyberpunk-ui {
+
+:root {
+  /* ── Neon accents ─────────────────────────────────────────── */
+  --cy-neon-cyan:   #00f2ff;
+  --cy-neon-pink:   #ff00ff;
+  --cy-neon-purple: #9d00ff;
+
+  /* Brass gold, the Deus Ex register rather than the neon one: a warmer,
+     lower-saturation accent for text that should read as machined rather
+     than lit. Deliberately not --cy-warning, which is a pale yellow with a
+     meaning attached — this one carries none, and mixing them would make a
+     decorative heading look like a caution. */
+  --cy-neon-gold:   #d4af37;
+
+  /* ── Surfaces ─────────────────────────────────────────────── */
+  --cy-bg:      #0a0a0c;
+  --cy-surface: #151518;
+
+  /* ── Text ─────────────────────────────────────────────────── */
+  --cy-text:    #d1d1d1;
+  --cy-heading: #ffffff;
+
+  /* ── Scrim ───────────────────────────────────────────────────
+     The modal backdrop, and deliberately NOT derived from --cy-bg: a
+     scrim's job is to push the page behind it away, so it stays dark in
+     both themes. Tying it to --cy-bg made the light theme paint a
+     near-white wash over a near-white page, which separated nothing.
+
+     It is a finished colour rather than a hue plus an -rgb twin because
+     nothing fades it further — the alpha is the point. */
+  --cy-backdrop: rgba(10, 10, 12, 0.72);
+
+  /* ── Type ─────────────────────────────────────────────────────
+     Load these fonts yourself (Google Fonts / self-hosted); the kit
+     degrades to system fonts if they're absent. */
+  --cy-font-display: 'Orbitron', system-ui, sans-serif;
+  --cy-font-body:    'Rajdhani', system-ui, sans-serif;
+  --cy-font-mono:    'Share Tech Mono', ui-monospace, monospace;
+
+  /* The terminal's own stack, and the only place the kit asks for a Nerd
+     Font. Those are patched builds of ordinary monospaces carrying an extra
+     few thousand glyphs — powerline separators, file-type and branch icons —
+     which is exactly what makes a fake terminal look like a real one.
+
+     They are named first and never shipped. The patched TTFs run to tens of
+     megabytes against a kit measured in kilobytes, so this token asks for what
+     a developer machine very often already has and falls through to
+     --cy-font-mono when it does not. Nothing breaks without them; the icons
+     simply are not there.
+
+     Kept separate from --cy-font-mono on purpose: Hack is widely installed,
+     and putting it first in the shared stack would quietly repaint every mono
+     surface in the kit — nav, badges, inputs, breadcrumb — on most developer
+     machines, which is not a font choice this kit should make for you. */
+  --cy-font-terminal: 'Hack Nerd Font Mono', 'JetBrainsMono Nerd Font',
+                      'FiraCode Nerd Font', var(--cy-font-mono);
+
+  /* ── Motion ───────────────────────────────────────────────── */
+  --cy-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ── Geometry ─────────────────────────────────────────────── */
+  --cy-radius-sm: 2px;
+  --cy-radius:    4px;
+  --cy-radius-lg: 8px;
+  --cy-border-width: 1px;
+
+  /* ── Spacing (4px-based scale) ────────────────────────────── */
+  --cy-space-xs: 0.25rem;
+  --cy-space-sm: 0.5rem;
+  --cy-space-md: 0.75rem;
+  --cy-space-lg: 1rem;
+  --cy-space-xl: 1.5rem;
+
+  /* ── Focus (shared by every interactive element) ──────────── */
+  --cy-focus-width:  2px;
+  --cy-focus-offset: 2px;
+  --cy-focus-color:  var(--cy-neon-cyan);
+
+  /* ── Status ────────────────────────────────────────────────
+     --cy-info aliases the cyan on purpose: its channels are already
+     published as --cy-cyan-rgb, so there is one source of truth. */
+  --cy-success: #52ff9a;
+  --cy-warning: #ffc857;
+  --cy-danger:  #ff4d4d;
+  --cy-info:    var(--cy-neon-cyan);
+
+  --cy-disabled-opacity: 0.45;
+}
+
+/* ── Light theme ──────────────────────────────────────────────
+   The bright neon hues fail WCAG contrast on light backgrounds
+   (cyan is ~1.2:1 on white), so cyan/pink are dimmed here. Purple
+   already passes (~5.5:1) and is left untouched. Toggle by setting
+   data-theme="light" on the <html> element. */
+:root[data-theme="light"] {
+  /* #008099 measured 4.07 against --cy-bg — below the 4.5 AA floor for
+     normal text. #00707f measures 5.10. */
+  --cy-neon-cyan: #00707f;
+  --cy-neon-pink: #b3009e;
+  /* #d4af37 measures 1.85 on the light background — invisible. This is the
+     same hue taken down until it clears the text floor: 5.66. */
+  --cy-neon-gold: #7d5800;
+
+  --cy-bg:      #f0f0f5;
+  --cy-surface: #ffffff;
+  --cy-text:    #3a3a45;
+  --cy-heading: #16161d;
+
+  /* Neon status hues fail contrast on a light background. */
+  --cy-success: #0a7d43;
+  --cy-warning: #8a5a00;
+  --cy-danger:  #c2110f;
+
+}
+
+/* ── Light theme, chosen by the operating system ──────────────────
+   The block above only fires when something sets data-theme="light" — a
+   script, or server-rendered markup. That leaves a visitor whose OS is in
+   light mode looking at neon-on-black, which is the one audience the light
+   palette exists for.
+
+   Opt in with data-theme="auto" on <html>, which is static markup, not a
+   script — the thing this block exists to avoid needing.
+
+   It is opt-in rather than automatic on purpose. `prefers-color-scheme: light`
+   matches when a user has expressed no preference at all, not only when they
+   have chosen light, so keying this off the absence of data-theme would have
+   flipped the kit to light for most visitors and silently restyled every site
+   already using it. A neon kit defaults to neon; the light palette is there
+   for people who ask, by attribute or by operating system.
+
+   The values are duplicated rather than shared, because a media query cannot
+   join a selector list — there is no way to say "this block, and also under
+   that condition". check-conventions.js compares the two declaration by
+   declaration and fails when they drift, so the cost of duplicating is paid
+   once in a checker rather than every time someone edits a colour. */
+@media (prefers-color-scheme: light) {
+  :root[data-theme="auto"] {
+
+    /* #008099 measured 4.07 against --cy-bg — below the 4.5 AA floor for
+       normal text. #00707f measures 5.10. */
+    --cy-neon-cyan: #00707f;
+    --cy-neon-pink: #b3009e;
+    /* #d4af37 measures 1.85 on the light background — invisible. This is the
+       same hue taken down until it clears the text floor: 5.66. */
+    --cy-neon-gold: #7d5800;
+
+    --cy-bg:      #f0f0f5;
+    --cy-surface: #ffffff;
+    --cy-text:    #3a3a45;
+    --cy-heading: #16161d;
+
+    /* Neon status hues fail contrast on a light background. */
+    --cy-success: #0a7d43;
+    --cy-warning: #8a5a00;
+    --cy-danger:  #c2110f;
+
+  }
+}
+
+/* ── Increased contrast ───────────────────────────────────────────
+   `prefers-contrast: more` is a request to make everything easier to see,
+   and most of the answer belongs here rather than in the components: raising
+   a token reaches every rule that consumes it, which is the entire reason
+   the substrate exists.
+
+   Body text goes to the extremes of each theme, borders and focus rings get
+   thicker, and disabled controls become more legible — "disabled" is still
+   communicated by the cursor, the styling and the semantics, so dimming it
+   to near-invisible was never carrying the meaning on its own.
+
+   Individual borders in the component files use their own alpha values and
+   cannot be lifted from here; each file raises its own alongside this.
+
+   These values are strictly higher-contrast than the base ones they replace,
+   so `scripts/check-contrast.js` — which reads the first `:root` block per
+   theme — stays authoritative for the floors. */
+@media (prefers-contrast: more) {
+  :root {
+    --cy-text: #ffffff;
+    --cy-border-width: 2px;
+    --cy-focus-width: 3px;
+    --cy-disabled-opacity: 0.7;
+  }
+
+  :root[data-theme="light"] {
+    --cy-text: #16161d;
+  }
+}
+
+}

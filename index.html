@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pavan MP — MERN Developer · AI, LLM Agents &amp; Automation</title>
+  <meta name="description" content="Pavan MP is a MERN stack developer and Computer Science student at NMAM Institute of Technology, building LLM applications, local-first AI tools and real-time systems. Main DSA language: Java.">
+  <meta name="theme-color" content="#06070b">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="Pavan MP — MERN Developer · AI, LLM Agents &amp; Automation">
+  <meta property="og:description" content="MERN stack developer and CSE student building LLM applications, multi-agent workflows and real-time systems.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2306070b'/%3E%3Cpath d='M16 46V18h15a10 10 0 0 1 0 20H24' fill='none' stroke='%233fd8e4' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/ChakraPetch-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/InstrumentSans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Open-source CSS kit (MIT): design tokens + glow / glitch / scanline / animated-grid effects -->
+  <link rel="stylesheet" href="vendor/cyberpunk-ui/tokens.css">
+  <link rel="stylesheet" href="vendor/cyberpunk-ui/effects.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Ambient background: soft glows + animated grid (cyberpunk-ui) + particle network (tsParticles, loaded lazily) -->
+  <div class="bg cy-scanlines" aria-hidden="true">
+    <div class="bg-glow bg-glow-a"></div>
+    <div class="bg-glow bg-glow-b"></div>
+    <div class="bg-grid cy-grid-bg"></div>
+    <div id="particles" class="bg-particles"></div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="wrap bar">
+      <a class="brand" href="#top" aria-label="Pavan MP — back to top">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span class="brand-name">Pavan MP</span>
+      </a>
+      <nav id="site-nav" class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#journey">Hackathons</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="nav-resume"><a href="assets/Pavan_MP_Resume.pdf" download="Pavan_MP_Resume.pdf">Download résumé</a></li>
+        </ul>
+      </nav>
+      <div class="bar-actions">
+        <button class="kbd-btn" type="button" id="open-palette" aria-haspopup="dialog" hidden>
+          <svg class="i" aria-hidden="true"><use href="assets/icons.svg#search"/></svg>
+          <span>Quick jump</span><kbd>Ctrl K</kbd>
+        </button>
+        <a class="btn btn-small btn-ghost bar-resume" href="assets/Pavan_MP_Resume.pdf" download="Pavan_MP_Resume.pdf">
+          <svg class="i" aria-hidden="true"><use href="assets/icons.svg#download"/></svg>Résumé
+        </a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="menu-btn-label">Menu</span>
+          <span class="menu-btn-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <a class="pill" href="#case-xodus">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Currently building <strong>XODUS</strong>, a local-first AI workspace</span>
+            <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg>
+          </a>
+          <p class="role"><span class="prompt" aria-hidden="true">&gt;</span>MERN stack developer · AI &amp; LLM agents<span class="cy-cursor" aria-hidden="true"></span></p>
+          <h1 id="hero-title" class="hero-title"><span class="glitch">Pavan&nbsp;MP</span></h1>
+          <p class="hero-lead">I build <em>LLM applications</em>, multi-agent workflows and <em>real-time web apps</em>.</p>
+          <p class="hero-sub">CSE student at NMAM Institute of Technology (2024–2028). Java is my main language for DSA.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View projects <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></a>
+            <a class="btn btn-ghost" href="assets/Pavan_MP_Resume.pdf" download="Pavan_MP_Resume.pdf"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#download"/></svg>Download résumé</a>
+            <ul class="socials" aria-label="Profiles">
+              <li><a class="icon-btn" href="https://github.com/Infernoooooo7" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)" title="GitHub"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#brand-github"/></svg></a></li>
+              <li><a class="icon-btn" href="https://www.linkedin.com/in/pavan-mp-5a2bbb378" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)" title="LinkedIn"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#brand-linkedin"/></svg></a></li>
+              <li><a class="icon-btn" href="#contact" aria-label="Contact me" title="Contact"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#mail"/></svg></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="stage" id="stage" role="group" aria-label="Interactive 3D diagram of my technology stack in three layers">
+            <div class="float">
+              <div class="stack" id="stack">
+                <div class="floor" aria-hidden="true"></div>
+                <article class="layer layer-ai" style="--i:0">
+                  <p class="layer-label"><span>01</span> AI &amp; LLMs</p>
+                  <ul class="chips">
+                    <li>LLM APIs (Gemini, Claude)</li>
+                    <li>Prompt engineering</li>
+                    <li>CrewAI</li>
+                    <li>n8n</li>
+                    <li>Structured outputs</li>
+                  </ul>
+                </article>
+                <article class="layer layer-be" style="--i:1">
+                  <p class="layer-label"><span>02</span> Backend &amp; Data</p>
+                  <ul class="chips">
+                    <li>FastAPI</li>
+                    <li>Node.js</li>
+                    <li>Socket.IO</li>
+                    <li>Redis</li>
+                    <li>MongoDB</li>
+                    <li>SQLite</li>
+                  </ul>
+                </article>
+                <article class="layer layer-fe" style="--i:2">
+                  <p class="layer-label"><span>03</span> Frontend &amp; Tools</p>
+                  <ul class="chips">
+                    <li>React</li>
+                    <li>Docker</li>
+                    <li>Git &amp; GitHub</li>
+                    <li>Vercel</li>
+                    <li>Render</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="stage-tools">
+            <p class="stage-hint">My stack, as layers. Move your pointer over it to tilt.</p>
+            <button class="toggle" id="explode" type="button" aria-pressed="false">Explode layers</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="sec-label"><span>01</span> Projects</p>
+          <h2 id="projects-title">Things I’ve built</h2>
+          <p class="sec-sub">Select a project for the full write-up. Links appear only where a public repository or demo exists.</p>
+        </header>
+
+        <ol class="bento">
+          <!-- 01 XODUS (featured) -->
+          <li class="card-cell cell-feature reveal">
+            <article class="card card-featured" id="case-xodus" data-case data-tilt-card>
+              <div class="card-main">
+                <div class="card-top">
+                  <p class="card-index">01</p>
+                  <p class="card-kind">Local-first AI</p>
+                  <p class="status"><span class="status-dot" aria-hidden="true"></span>In progress</p>
+                </div>
+                <h3 class="card-title">XODUS</h3>
+                <p class="card-sum">A local-first personal AI workspace and research testbed: local Ollama models only, a SQLite knowledge base with checked citations, and a built-in approval and audit layer.</p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Python</li><li>FastAPI</li><li>TypeScript</li><li>Next.js</li><li>SQLite</li><li>Ollama</li>
+                </ul>
+              </div>
+              <ol class="flow flow-lg" aria-label="Architecture">
+                <li><strong>Static Next.js UI</strong><small>Served by the backend, with no Node process at runtime</small></li>
+                <li><strong>FastAPI + StepGate</strong><small>Loopback-only; one gate for schemas, permissions, paths and approvals</small></li>
+                <li><strong>Ollama + SQLite</strong><small>Local models only; FTS5 + sqlite-vec knowledge base</small></li>
+              </ol>
+              <div class="case">
+                <ul class="points">
+                  <li>A local-first personal AI workspace and research testbed. A loopback-only FastAPI backend (127.0.0.1) serves a static Next.js UI and streams chat from a local Ollama model. It uses local models only and refuses cloud-hosted ones.</li>
+                  <li>Its knowledge base is a single SQLite file (FTS5 keyword index plus sqlite-vec vectors) with hybrid retrieval, and answers carry checked <code>[chunk:ID]</code> citations.</li>
+                  <li>Safety is built in: one enforcement point (<code>StepGate</code>) for schemas, permissions, paths and approvals; approvals bound to action hashes; a hash-chained audit log; a resource governor; and a process supervisor using Windows Job Objects.</li>
+                  <li>It also doubles as a research testbed: a formal study (Gate G) comparing ReAct with plan-then-execute agent designs is in progress, per the README.</li>
+                </ul>
+                <p class="case-note">Runs locally only, so there is no live demo. Description based on the repository README.</p>
+              </div>
+              <div class="card-foot">
+                <a class="link" href="https://github.com/Infernoooooo7/X.O.D.U.S-" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#brand-github"/></svg>Source<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+                <button class="card-open" type="button" hidden>Read the write-up <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></button>
+              </div>
+            </article>
+          </li>
+
+          <!-- 02 Resume analyzer -->
+          <li class="card-cell reveal" style="--d:1">
+            <article class="card" id="case-analyzer" data-case data-tilt-card>
+              <div class="card-main">
+                <div class="card-top"><p class="card-index">02</p><p class="card-kind">Multi-agent AI</p></div>
+                <h3 class="card-title">Multi-Agent AI Resume Analyzer</h3>
+                <p class="card-sum">Three sequential CrewAI agents compare a resume with a job description, ending in an evidence-based verdict that can say “Insufficient Information”.</p>
+              </div>
+              <ol class="flow" aria-label="Pipeline">
+                <li>Resume + job description</li><li>Keyword match</li><li>ATS score (est.)</li><li>Eligibility verdict</li>
+              </ol>
+              <ul class="tags" aria-label="Technologies"><li>Python</li><li>CrewAI</li><li>LLM APIs</li></ul>
+              <div class="case">
+                <ul class="points">
+                  <li>A sequential three-agent CrewAI pipeline that compares a resume with a job description. The agents handle keyword matching, an estimated ATS-compatibility score, and an evidence-based eligibility assessment in turn.</li>
+                  <li>The eligibility agent is limited to a fixed three-way verdict (Eligible, Not Eligible, Insufficient Information), so missing resume evidence produces an explicit “Insufficient Information” instead of an inferred judgment.</li>
+                </ul>
+              </div>
+              <div class="card-foot">
+                <span class="link-note">No public link</span>
+                <button class="card-open" type="button" hidden>Details <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></button>
+              </div>
+            </article>
+          </li>
+
+          <!-- 03 Reality Debugger -->
+          <li class="card-cell reveal" style="--d:2">
+            <article class="card" id="case-reality" data-case data-tilt-card>
+              <div class="card-main">
+                <div class="card-top"><p class="card-index">03</p><p class="card-kind">Vision + LLM</p></div>
+                <h3 class="card-title">Reality Debugger</h3>
+                <p class="card-sum">Turns a camera feed, photo or video into a bug report for a physical scene, using on-device detection and an optional, rate-limited LLM layer.</p>
+              </div>
+              <ol class="flow" aria-label="Pipeline">
+                <li>Camera · photo · video</li><li>Detect + track</li><li>FastAPI rule engine</li><li class="opt">LLM (optional)</li>
+              </ol>
+              <ul class="tags" aria-label="Technologies"><li>Python</li><li>FastAPI</li><li>Pydantic</li><li>React</li><li>ONNX Runtime</li></ul>
+              <div class="case">
+                <ul class="points">
+                  <li>Built with Claude as an AI coding agent: a web app that turns a camera feed, photo or video into a bug report for a physical scene, using on-device detection (EfficientDet-Lite0, YOLOX-S) and ByteTrack tracking feeding a FastAPI rule engine.</li>
+                  <li>Adds an optional LLM layer (Gemini, Claude or OpenAI-compatible) with Pydantic-validated JSON output. Calls are capped at 6 per minute with a cooldown, a 2-minute cache and error back-off, and local results stand if the LLM fails.</li>
+                </ul>
+              </div>
+              <div class="card-foot">
+                <a class="link" href="https://github.com/Infernoooooo7/reality-debugger" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#brand-github"/></svg>Source<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+                <button class="card-open" type="button" hidden>Details <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></button>
+              </div>
+            </article>
+          </li>
+
+          <!-- 04 Telegram bot -->
+          <li class="card-cell reveal" style="--d:3">
+            <article class="card" id="case-telegram" data-case data-tilt-card>
+              <div class="card-main">
+                <div class="card-top"><p class="card-index">04</p><p class="card-kind">Automation</p></div>
+                <h3 class="card-title">Telegram Translation &amp; Voice Bot</h3>
+                <p class="card-sum">An n8n workflow that translates Telegram text and voice notes with an LLM and replies in the same mode, with fallback branches for unusable output.</p>
+              </div>
+              <ol class="flow" aria-label="Pipeline">
+                <li>Text · voice note</li><li>n8n + LLM translate</li><li>Text · speech reply</li>
+              </ol>
+              <ul class="tags" aria-label="Technologies"><li>n8n</li><li>LLM API</li><li>Telegram</li><li>Text-to-Speech</li></ul>
+              <div class="case">
+                <ul class="points">
+                  <li>An n8n workflow that takes incoming Telegram text messages and voice notes, translates them with an LLM, and replies in the same mode: text for text, synthesized speech for voice notes.</li>
+                  <li>Validation and fallback branches make empty or unusable translations return a clear failure message instead of a broken reply, alongside per-user preference handling.</li>
+                </ul>
+              </div>
+              <div class="card-foot">
+                <span class="link-note">No public link</span>
+                <button class="card-open" type="button" hidden>Details <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></button>
+              </div>
+            </article>
+          </li>
+
+          <!-- 05 PhishForensics -->
+          <li class="card-cell cell-half reveal" style="--d:1">
+            <article class="card" id="case-phish" data-case data-tilt-card>
+              <div class="card-main">
+                <div class="card-top"><p class="card-index">05</p><p class="card-kind">Hackathon · Security</p></div>
+                <h3 class="card-title">PhishForensics</h3>
+                <p class="card-sum">Our BugBash 2026 hackathon entry. I wrote its FastAPI engine: it parses raw emails and scores each URL on 11 weighted signals, calling VirusTotal only when local risk is high.</p>
+              </div>
+              <ol class="flow" aria-label="Pipeline">
+                <li>Raw email</li><li>11 URL signals</li><li>VirusTotal (above threshold)</li><li>PDF report</li>
+              </ol>
+              <ul class="tags" aria-label="Technologies"><li>Python</li><li>FastAPI</li><li>SQLite</li><li>VirusTotal API</li><li>ReportLab</li><li>React</li></ul>
+              <div class="case">
+                <ul class="points">
+                  <li>I wrote the FastAPI engine of our hackathon entry. It parses raw emails, flags sender / Return-Path mismatches, expands redirects, and scores each URL on 11 weighted signals such as homograph similarity, entropy and raw-IP hosts.</li>
+                  <li>It queries the VirusTotal v3 API only for URLs above a local risk threshold, and caches verdicts in SQLite to limit calls to the rate-limited service. I also built the Chrome extension client and the ReportLab PDF reports.</li>
+                </ul>
+              </div>
+              <div class="card-foot">
+                <span class="foot-links">
+                  <a class="link" href="https://github.com/Infernoooooo7/teamCrackers" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#brand-github"/></svg>Source<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+                  <a class="link" href="https://team-crackers.vercel.app" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg>Live demo<span class="sr-only"> (opens in a new tab)</span></a>
+                </span>
+                <button class="card-open" type="button" hidden>Details <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></button>
+              </div>
+            </article>
+          </li>
+
+          <!-- 06 Pixel Duel -->
+          <li class="card-cell cell-half reveal" style="--d:2">
+            <article class="card" id="case-pixelduel" data-case data-tilt-card>
+              <div class="card-main">
+                <div class="card-top"><p class="card-index">06</p><p class="card-kind">Real-time · MERN</p></div>
+                <h3 class="card-title">Pixel Duel</h3>
+                <p class="card-sum">A real-time 1v1 coding battle: Elo-based matchmaking over Socket.IO and Redis, with a Dockerized judge that runs submissions in four languages.</p>
+              </div>
+              <ol class="flow" aria-label="Pipeline">
+                <li>Elo queue (Redis)</li><li>Live match (Socket.IO)</li><li>Docker judge</li><li>Ratings (MongoDB)</li>
+              </ol>
+              <ul class="tags" aria-label="Technologies"><li>React</li><li>Node.js</li><li>Express</li><li>Socket.IO</li><li>MongoDB</li><li>Redis</li><li>Docker</li></ul>
+              <div class="case">
+                <ul class="points">
+                  <li>A real-time 1v1 coding-battle platform. Socket.IO carries match events and a Redis sorted-set queue pairs players by Elo rating; ratings are recalculated and stored in MongoDB after each match.</li>
+                  <li>A Dockerized judge microservice compiles and runs submissions in Python, JavaScript, C++ and Java against test cases, enforcing execution timeouts, output caps, and code-size and test-case limits.</li>
+                </ul>
+              </div>
+              <div class="card-foot">
+                <a class="link" href="https://github.com/Infernoooooo7/1v1-coding-battle" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#brand-github"/></svg>Source<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+                <button class="card-open" type="button" hidden>Details <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></button>
+              </div>
+            </article>
+          </li>
+        </ol>
+        <p class="footnote">Five projects come from my résumé; XODUS is described from its repository README.</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="sec-label"><span>02</span> Skills</p>
+          <h2 id="skills-title">What I work with</h2>
+          <p class="sec-sub">My core stack first, then everything else I use.</p>
+        </header>
+
+        <div class="core reveal">
+          <div class="core-mern">
+            <p class="core-label">Core web stack · MERN</p>
+            <ul class="mern" aria-label="MERN stack">
+              <li><span class="mern-letter" aria-hidden="true">M</span><span class="mern-name">MongoDB</span></li>
+              <li><span class="mern-letter" aria-hidden="true">E</span><span class="mern-name">Express.js</span></li>
+              <li><span class="mern-letter" aria-hidden="true">R</span><span class="mern-name">React</span></li>
+              <li><span class="mern-letter" aria-hidden="true">N</span><span class="mern-name">Node.js</span></li>
+            </ul>
+          </div>
+          <div class="core-java">
+            <p class="core-label">Main language for DSA</p>
+            <p class="java-word">Java</p>
+            <p class="java-sub">Also my primary language overall, with an Infosys Springboard Java certification (Aug 2025).</p>
+          </div>
+        </div>
+
+        <dl class="sheet reveal">
+          <div class="sheet-row">
+            <dt>AI &amp; LLMs</dt>
+            <dd><ul class="inline"><li>LLM APIs (Gemini, Claude)</li><li>Prompt engineering</li><li>CrewAI multi-agent workflows</li><li>n8n</li><li>Structured outputs</li></ul></dd>
+          </div>
+          <div class="sheet-row">
+            <dt>Languages</dt>
+            <dd><ul class="inline"><li><strong>Java</strong> (primary)</li><li>Python</li><li>JavaScript</li><li>SQL</li></ul></dd>
+          </div>
+          <div class="sheet-row">
+            <dt>Backend &amp; Data</dt>
+            <dd><ul class="inline"><li>FastAPI</li><li>Pydantic</li><li>REST APIs</li><li>Node.js</li><li>Express.js</li><li>Socket.IO</li><li>SQLite</li><li>MongoDB</li><li>Redis</li></ul></dd>
+          </div>
+          <div class="sheet-row">
+            <dt>Frontend &amp; Tools</dt>
+            <dd><ul class="inline"><li>React</li><li>HTML</li><li>CSS</li><li>Docker</li><li>Git</li><li>GitHub</li><li>Render</li><li>Vercel</li><li>AI coding agents (Claude)</li></ul></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- HACKATHONS / CERTS / CLUBS -->
+    <section class="section" id="journey" aria-labelledby="journey-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="sec-label"><span>03</span> Hackathons &amp; more</p>
+          <h2 id="journey-title">Beyond coursework</h2>
+          <p class="sec-sub">I’m a student and my résumé lists no employment, so this is the hands-on experience it does list.</p>
+        </header>
+
+        <div class="journey">
+          <div class="reveal">
+            <h3 class="col-title">Hackathons</h3>
+            <ol class="timeline">
+              <li class="tl-item">
+                <p class="tl-when">Apr 2026</p>
+                <h4>BugBash 2026 (Aayam)</h4>
+                <p class="tl-org">Newton School of Technology, Bengaluru</p>
+                <p>24-hour national hackathon, entered as Team Crackers. We built PhishForensics.</p>
+              </li>
+              <li class="tl-item">
+                <p class="tl-when">Hackdays</p>
+                <h4>MLH × Google Gemini × ACM</h4>
+                <p class="tl-org">Shortlisted team project</p>
+                <p>VeriTrail, a 6-hour build that verifies documents with content-bound cryptographic signatures and uses Gemini as an advisory second opinion.</p>
+              </li>
+            </ol>
+          </div>
+
+          <div class="reveal" style="--d:1">
+            <h3 class="col-title">Certifications <span class="col-sub">Aug 2025</span></h3>
+            <ul class="plain">
+              <li>Microsoft Azure AI Fundamentals</li>
+              <li>IBM SkillsBuild — Data Concepts</li>
+              <li>Infosys Springboard — Java</li>
+            </ul>
+            <h3 class="col-title col-title-2">Clubs at NMAMIT <span class="col-sub">since Aug 2025</span></h3>
+            <ul class="plain">
+              <li>CSI, Student Branch NMAMIT</li>
+              <li>Wiki Tech Club NMAMIT</li>
+              <li>Finite Loop Club — NMAMIT</li>
+            </ul>
+            <p class="source-note">Club memberships are from my LinkedIn profile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section section-tight" id="education" aria-labelledby="education-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="sec-label"><span>04</span> Education</p>
+          <h2 id="education-title" class="sr-only">Education</h2>
+        </header>
+        <div class="edu reveal">
+          <p class="edu-years">2024<span aria-hidden="true"> – </span><span class="sr-only"> to </span>2028</p>
+          <div>
+            <h3>B.Tech, Computer Science and Engineering</h3>
+            <p class="edu-school">NMAM Institute of Technology, Nitte</p>
+            <p class="edu-detail">Coursework includes Data Structures, Algorithms, Machine Learning and Cloud Computing <span class="source-inline">(per my LinkedIn profile)</span>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="contact reveal">
+          <p class="sec-label"><span>05</span> Contact</p>
+          <h2 id="contact-title">Let’s talk.</h2>
+          <p class="contact-sub">Email is the quickest way to reach me.</p>
+          <div class="mail-row">
+            <a class="big-mail" id="mail-link" href="mailto:pavanmp256@gmail.com?subject=Hello%20Pavan">pavanmp256@gmail.com</a>
+            <button class="btn btn-ghost" id="copy-mail" type="button" data-email="pavanmp256@gmail.com"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#copy"/></svg><span>Copy email</span></button>
+          </div>
+          <p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
+          <ul class="contact-links">
+            <li><a href="https://github.com/Infernoooooo7" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#brand-github"/></svg><span><small>GitHub</small>github.com/Infernoooooo7</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.linkedin.com/in/pavan-mp-5a2bbb378" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#brand-linkedin"/></svg><span><small>LinkedIn</small>linkedin.com/in/pavan-mp-5a2bbb378</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><a href="tel:+918088647824"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#phone"/></svg><span><small>Phone</small>+91-8088647824</span></a></li>
+            <li><a href="assets/Pavan_MP_Resume.pdf" download="Pavan_MP_Resume.pdf"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#download"/></svg><span><small>Résumé</small>Download PDF</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <p>© <span id="year">2026</span> Pavan MP</p>
+      <p class="credits">Built with MIT-licensed
+        <a href="https://github.com/tsparticles/tsparticles" target="_blank" rel="noopener noreferrer">tsParticles</a>,
+        <a href="https://github.com/micku7zu/vanilla-tilt.js" target="_blank" rel="noopener noreferrer">vanilla-tilt.js</a>,
+        <a href="https://github.com/laddtnov/cyberpunk-ui" target="_blank" rel="noopener noreferrer">cyberpunk-ui</a> and
+        <a href="https://github.com/tabler/tabler-icons" target="_blank" rel="noopener noreferrer">Tabler Icons</a>.</p>
+      <p><a href="#top">Back to top <svg class="i" aria-hidden="true"><use href="assets/icons.svg#arrow-up"/></svg></a></p>
+    </div>
+  </footer>
+
+  <!-- Mobile quick-action dock (shown after the hero on small screens) -->
+  <div class="dock" id="dock" aria-label="Quick actions" hidden>
+    <a class="btn btn-primary" href="mailto:pavanmp256@gmail.com?subject=Hello%20Pavan"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#mail"/></svg>Email</a>
+    <a class="btn btn-ghost" href="assets/Pavan_MP_Resume.pdf" download="Pavan_MP_Resume.pdf"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#download"/></svg>Résumé</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/pavan-mp-5a2bbb378" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#brand-linkedin"/></svg>LinkedIn</a>
+  </div>
+
+  <!-- Project write-up dialog (populated from each card's .case block) -->
+  <dialog id="case-dialog" class="dlg" aria-labelledby="case-title">
+    <div class="dlg-panel">
+      <header class="dlg-head">
+        <p class="dlg-kicker" id="case-kicker"></p>
+        <button class="icon-btn" type="button" id="case-close" aria-label="Close project details"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#x"/></svg></button>
+      </header>
+      <h2 id="case-title" class="dlg-title"></h2>
+      <div id="case-body" class="dlg-body"></div>
+      <footer class="dlg-foot">
+        <button class="btn btn-ghost btn-small" type="button" id="case-prev"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-left"/></svg><span>Previous</span></button>
+        <p class="dlg-count" id="case-count" aria-live="polite"></p>
+        <button class="btn btn-ghost btn-small" type="button" id="case-next"><span>Next</span><svg class="i" aria-hidden="true"><use href="assets/icons.svg#chevron-right"/></svg></button>
+      </footer>
+    </div>
+  </dialog>
+
+  <!-- Quick-jump command palette (Ctrl/⌘ + K) -->
+  <dialog id="palette" class="dlg dlg-palette" aria-label="Quick jump">
+    <div class="dlg-panel">
+      <div class="pal-input">
+        <svg class="i" aria-hidden="true"><use href="assets/icons.svg#search"/></svg>
+        <input id="pal-q" type="text" role="combobox" aria-expanded="true" aria-controls="pal-list" aria-autocomplete="list" aria-label="Search sections, projects and links" placeholder="Jump to a section, project or link…" autocomplete="off" spellcheck="false">
+        <kbd>Esc</kbd>
+      </div>
+      <ul id="pal-list" class="pal-list" role="listbox" aria-label="Results"></ul>
+      <p class="pal-hint"><kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to open</p>
+    </div>
+  </dialog>
+
+  <script src="vendor/vanilla-tilt/vanilla-tilt.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

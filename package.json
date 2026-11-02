@@ -1,0 +1,10 @@
+{
+  "name": "pavan-mp-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal portfolio for Pavan MP — static site, no build step.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  }
+}
