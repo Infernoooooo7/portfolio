@@ -290,7 +290,8 @@ body.is-scrolled { --grid-o: .2; --part-o: .5; }
 .tl-when { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
 .tl-item h4 { font-size: 1.25rem; margin-top: .25rem; }
 .tl-org { color: var(--muted); font-size: .95rem; margin-top: .1rem; }
-.tl-item p:last-child:not(.tl-org) { margin-top: .6rem; color: var(--text-2); }
+.tl-item p:not(.tl-org):not(.tl-when):not(.tl-links) { margin-top: .6rem; color: var(--text-2); }
+.tl-links { margin-top: .25rem; }
 .plain { border-top: 1px solid var(--line); }
 .plain li { padding: .8rem 0; border-bottom: 1px solid var(--line); color: var(--text-2); }
 .source-note, .source-inline { color: var(--muted); font-size: .88rem; }
