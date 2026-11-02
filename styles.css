@@ -284,6 +284,8 @@ body.is-scrolled { --grid-o: .2; --part-o: .5; }
 .timeline { position: relative; margin-left: .35rem; border-left: 1px solid var(--line-strong); }
 .tl-item { position: relative; padding: 0 0 var(--s4) var(--s4); }
 .tl-item:last-child { padding-bottom: 0; }
+.tl-win .tl-when { color: var(--accent-2); }
+.tl-item.tl-win::before { background: var(--accent-2); box-shadow: 0 0 0 4px rgb(var(--accent-2-rgb) / .18), 0 0 12px rgb(var(--accent-2-rgb) / .7); }
 .tl-item::before { content: ""; position: absolute; left: -5px; top: .45rem; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgb(var(--accent-rgb) / .15), 0 0 12px rgb(var(--accent-rgb) / .7); }
 .tl-when { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
 .tl-item h4 { font-size: 1.25rem; margin-top: .25rem; }

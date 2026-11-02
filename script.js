@@ -279,7 +279,7 @@
     const items = [
       { label: 'Projects', group: 'Section', icon: 'arrow-right', run: goto('projects') },
       { label: 'Skills', group: 'Section', icon: 'arrow-right', run: goto('skills') },
-      { label: 'Hackathons & certifications', group: 'Section', icon: 'arrow-right', run: goto('journey') },
+      { label: 'Competitions & certifications', group: 'Section', icon: 'arrow-right', run: goto('journey') },
       { label: 'Education', group: 'Section', icon: 'arrow-right', run: goto('education') },
       { label: 'Contact', group: 'Section', icon: 'arrow-right', run: goto('contact') },
       ...cards.map((card, i) => ({ label: $('.card-title', card).textContent, group: 'Project', icon: 'command', run: () => openCase(i) })),
